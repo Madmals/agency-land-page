@@ -1,6 +1,6 @@
 
 
-## Landing page travel 
+## Landing page agency 
 
 This is mock landing page for agency based on picture below
 
