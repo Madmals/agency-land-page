@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+
+// -----------------------------------------------------------------------------
+
+.footer {
+    background: $dark;
+    height: 180px;
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    font-size: 12px;
+
+    &__copyright{
+	display: flex;
+	gap: 25px;
+
+	img{
+		height:40px;
+	}
+    }
+
+
+    &__link{
+	    a{
+		    text-decoration: none;
+		    color: #fff;
+	    }
+    }
+@include breakpoint(phablet) {
+
+    background:$dark;
+    height: 180px;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    font-size: 12px;
+
+    &__copyright{
+	    padding-top: 5vh;
+	display: flex;
+	gap: 25px;
+    color: #fff;
+
+	img{
+		height:40px;
+	}
+    }
+
+    &__link{
+	    padding: 30px;
+	    a{
+		    text-decoration: none;
+		    color: #fff;
+	    }
+    }
+}
+
+
+  @include breakpoint(tablet) {
+    background: $dark;
+    height: 180px;
+    padding: 60px 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    font-size: 12px;
+
+    &__copyright{
+	display: flex;
+	
+	gap: 25px;
+
+	img{
+		height:40px;
+	}
+    }
+
+
+    &__link{
+	    a{
+		    text-decoration: none;
+		    color: #fff;
+	    }
+    }
+
+  }
+}

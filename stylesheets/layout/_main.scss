@@ -1,0 +1,821 @@
+.main {
+  padding-top: 12.8vh;
+  @include breakpoint(tablet) {
+  }
+  .banner {
+    @include widthcon;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    justify-content: center;
+    align-items: center;
+
+    a{
+      color: black;
+    }
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: row;
+    }
+    &__card {
+      button {
+        width: 40%;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 15px;
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      @include breakpoint(tablet) {
+        padding-right: 2vw;
+        flex: 1;
+        // background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+          // font-size: 60px;
+          @include header-style;
+          line-height: 60px;
+        }
+
+        p {
+          padding-top: 7vh;
+          font-size: 17px;
+          line-height: 5.1vh;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+    &__img {
+      width: 80vw;
+      height: 40vh;
+      border-radius: 2px;
+      object-fit: cover;
+
+      @include breakpoint(tablet) {
+        flex: 1;
+        max-width: 45%;
+        height: 80vh;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .showcase {
+    @include widthcon;
+    padding-top: 10vh;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      padding-bottom: 5vh;
+    }
+
+    &__categories{
+      display: flex;
+      justify-content: space-between;
+
+         &__sort-dropdown{
+        font-size:18px;
+        height:5vh;
+
+        &:hover{
+          cursor: pointer;
+        }
+        
+      }
+      &__category {
+
+        &__link {
+          font-size:18px;
+          padding: 8px 25px;
+          cursor: pointer;
+          transition: background-color ease-in-out 0.4s;
+          margin-right: 2px;
+          &.active,
+          &:hover {
+            background-color: #ffe600;
+          }
+        }
+      }
+    }
+
+    @include breakpoint(tablet) {
+      padding-top: 90px;
+      h1 {
+        @include header-style;
+      }
+
+    &__categories {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__sort-dropdown{
+        font-size:18px;
+        height:5vh;
+        
+      }
+
+      &__category {
+        display: flex;
+
+        &__link {
+          font-size:18px;
+          padding: 8px 25px;
+          cursor: pointer;
+          transition: background-color ease-in-out 0.4s;
+          margin-right: 2px;
+          &.active,
+          &:hover {
+            background-color: #ffe600;
+          }
+        }
+      }
+    }
+    }
+
+    //gallery style grid using flexbox
+    &__gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 5vh;
+
+      &__item {
+        height: 50vh;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        &__layer {
+          background-color: rgba(207, 180, 23, 0.747);
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: opacity 0.6s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+
+          h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            text-align: center;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      @include breakpoint(tablet) {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-top: 65px;
+        flex-wrap: wrap;
+
+        &__item {
+          background-color: gray;
+          flex: 30%;
+          height: 300px;
+          background-position: center;
+          background-size: cover;
+          // background-attachment: fixed;
+        }
+      }
+      &__more {
+        padding-top: 40px;
+        width: 100%;
+        text-align: center;
+
+        button {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  .logo {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    &__con {
+      display: flex;
+      justify-content: space-between;
+
+      & img {
+        width: 5vw;
+        height: 5vh;
+      }
+    }
+    @include breakpoint(tablet) {
+      padding-top: 160px;
+      width: 100%;
+
+      &__con {
+        padding: 60px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #585656;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .aboutus {
+    @include widthcon;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    &__card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+        &__text {
+          flex: 1;
+            h3 {
+            padding: 0;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          p {
+            font-size: 15px;
+          }
+
+          a {
+            font-size: 15px;
+            color: $dark;
+            cursor: pointer;
+
+            &:hover {
+              color: #ffe600;
+            }
+          }
+          
+        }
+      &__pic {
+
+        &__img {
+          flex: 1;
+
+          &__con {
+            background-position: center;
+            height: 500px;
+            background-size: cover;
+            margin-top: 10px;
+
+              &__name {
+                height: 70px;
+                width: 200px;
+                background-color: #ffe600;
+                padding-left: 25px;
+                padding-top: 10px;
+                h3 {
+                  padding: 0;
+                  margin: 0;
+                  font-size: 15px;
+                }
+
+                h2 {
+                  padding: 0;
+                  margin: 0;
+                  font-size: 12px;
+                  color: #fff;
+                }
+              }
+          }
+        }
+      }
+    }
+
+    @include breakpoint(tablet) {
+      padding-top: 22.5vh;
+
+      h1 {
+        @include header-style;
+        margin-bottom: 10.4vh;
+      }
+
+      p {
+        width: 70%;
+        line-height: 5vh;
+        font-size: 15px;
+      }
+
+      &__card {
+        display: flex;
+        flex-direction: row;
+        height: 420px;
+        padding-top: 70px;
+
+        &__pic {
+          height: 100%;
+          flex: 70%;
+
+          &__img {
+            display: flex;
+            background-color: azure;
+            gap: 20px;
+            height: 100%;
+
+            &__con {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-end;
+              flex: 50%;
+              height: 100%;
+              background-position: center;
+              background-size: cover;
+
+            }
+          }
+        }
+
+        &__text {
+          display: flex;
+          flex-direction: column;
+          flex: 30%;
+          padding-left: 85px;
+
+          h3 {
+            padding: 0;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          p {
+            font-size: 15px;
+          }
+
+          a {
+            font-size: 12px;
+            color: $dark;
+            cursor: pointer;
+
+            &:hover {
+              color: #ffe600;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .blog {
+    padding-top: 15vh;
+    @include widthcon;
+      & h1 {
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      & p {
+        padding-top: 5vh;
+        font-size: 15px;
+        padding-bottom: 70px;
+      }
+
+      &__cardarea {
+        padding-bottom: 20vh;
+        display: flex;
+        flex-direction: column;
+        width:80vw;
+
+        &__card {
+          @include breakpoint(tablet) {
+          width:25vw;
+          }
+          &__img {
+            height: 280px;
+            // width: 20vw;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+
+            & a {
+              color: $dark;
+              text-decoration: none;
+              font-weight: bolder;
+              font-size: 25px;
+              opacity: 0;
+              height: 100%;
+              width: 100%;
+              display: grid;
+              place-items: center;
+              background: rgba(207, 180, 23, 0.747);
+              transition: opacity 0.4s ease-in-out;
+              cursor: pointer;
+            }
+
+            & a:hover {
+              opacity: 1;
+            }
+          }
+          & h2 {
+            font-size: 20px;
+            font-weight: bolder;
+            padding: 25px 30px;
+          }
+
+          & p {
+            padding: 10px;
+            font-size: 15px;
+          }
+
+          & h3 {
+            padding: 10px;
+          }
+        }
+      }
+
+    
+
+    @include breakpoint(tablet) {
+      & h1 {
+        @include header-style;
+      }
+
+      & p {
+        padding-top: 70px;
+        font-size: 15px;
+        padding-bottom: 70px;
+      }
+
+      &__cardarea {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        &__card {
+          &__img {
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+
+            & a {
+              color: $dark;
+              text-decoration: none;
+              font-weight: bolder;
+              font-size: 25px;
+              opacity: 0;
+              height: 100%;
+              width: 100%;
+              display: grid;
+              place-items: center;
+              background: rgba(207, 180, 23, 0.747);
+              transition: opacity 0.4s ease-in-out;
+              cursor: pointer;
+            }
+
+            & a:hover {
+              opacity: 1;
+            }
+          }
+          & h2 {
+            font-size: 15px;
+            font-weight: bolder;
+            padding: 25px 30px;
+          }
+
+          & p {
+            padding: 10px;
+            font-size: 12px;
+          }
+
+          & h3 {
+            padding: 10px;
+            padding-bottom: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  .contactus {
+    @include widthcon;
+      & h1 {
+        padding-top: 70px;
+        @include header-style;
+      }
+      & p {
+        font-size: 15px;
+        width: 50%;
+        line-height: 30px;
+      }
+
+      &__messagearea {
+        &__con {
+          padding-top: 40px;
+          gap: 10px;
+          display: flex;
+          height: 470px;
+          display: flex;
+
+          form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+
+            h1 {
+              font-size: 25px;
+              padding-top: 33px;
+            }
+
+            input,
+            textarea {
+              height: 43px;
+              background-color: rgba(239, 239, 239);
+              border: 0;
+              padding: 0 20px;
+            }
+
+            input,textarea::placeholder {
+              font-size:18px;
+            }
+
+            input,
+            textarea::placeholder {
+              color: $dark;
+            }
+
+            textarea {
+              min-height: 126px;
+            }
+          }
+
+        }
+      }
+      &__contact {
+        padding-top: 15vh;
+        padding-left: 20vw;
+        display: flex;
+        justify-content: center;
+
+        &__card {
+          flex-direction: column;
+          justify-content: center;
+          padding-right: 140px;
+
+          & p {
+            font-size: 12px;
+            width: 100%;
+          }
+
+          & a {
+            padding-top: 20px;
+            font-size: 12px;
+            color: $dark;
+            text-decoration: none;
+          }
+
+          &__logo {
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      &__social {
+        // padding-top: 60px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 30px;
+          padding-right: 75px;
+        }
+      }
+
+    @include breakpoint(tablet) {
+      & h1 {
+        padding-top: 70px;
+        @include header-style;
+      }
+      & p {
+        font-size: 15px;
+        width: 50%;
+        line-height: 30px;
+      }
+
+      &__messagearea {
+        &__con {
+          padding-top: 40px;
+          gap: 10px;
+          display: flex;
+          height: 470px;
+          display: flex;
+
+          form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+
+            h1 {
+              font-size: 25px;
+              padding-top: 33px;
+            }
+
+            input,
+            textarea {
+              height: 43px;
+              background-color: rgba(239, 239, 239);
+              border: 0;
+              padding: 0 20px;
+            }
+
+            input,
+            textarea::placeholder {
+              color: $dark;
+            }
+
+            textarea {
+              min-height: 126px;
+            }
+          }
+
+          &__img {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      &__contact {
+        padding-top: 65px;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+
+        &__card {
+          flex-direction: column;
+          justify-content: center;
+          padding-right: 140px;
+
+          & p {
+            font-size: 12px;
+            width: 100%;
+          }
+
+          & a {
+            padding-top: 20px;
+            font-size: 12px;
+            color: $dark;
+            text-decoration: none;
+          }
+
+          &__logo {
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      &__social {
+        padding-top: 60px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 75px;
+
+        img {
+          height: 30px;
+          padding-right: 75px;
+        }
+      }
+    }
+  }
+}
+
+//js
+
+//class for readmore
+
+.more {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.show {
+  transform: translateX(-100%);
+}
+
+
+//popup image gallery
+
+.popup_img {
+  height:60vh;
+  width: 80vw;
+  background-color: #585656;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  position:fixed;
+  top:20vh;
+  text-align: center;
+  z-index:10;
+  border: 10px solid black;
+
+}
+
+.popup_img::before{
+    cursor: pointer;
+    content: "\f410";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "Font Awesome 5 Free";
+    right:-30px;
+    position:absolute;
+    top:-45px;
+    font-size: 35px;
+    color: rgba(226, 37, 37, 0.7);
+}
+
+
+.translate{
+  visibility:hidden;
+}
+
+
+.popup_showmore{
+  height:80vh;
+  width:80vw;
+  background-color:#585656;
+  position:absolute;
+  position: fixed;
+  top:80px;
+  border: 10px solid black;
+  display: flex;
+  // flex-direction: ;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  gap: 5px;
+}
+
+.popup_showmore::before{
+      cursor: pointer;
+    content: "\f410";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "Font Awesome 5 Free";
+    right:-30px;
+    position:absolute;
+    top:-38px;
+    font-size: 28px;
+    color: rgba(226, 37, 37, 0.7);
+}

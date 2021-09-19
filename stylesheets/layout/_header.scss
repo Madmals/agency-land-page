@@ -1,0 +1,83 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+  @include widthcon;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  position:fixed;
+  z-index:2;
+
+
+
+  &__bur {
+    padding: 10px;
+    height: 10vh;
+    width:60px;
+  }
+  &__logo {
+    height: 10vh;
+  }
+
+  &__nav__link {
+    color: $light;
+    padding: 10px;
+    text-decoration: none;
+
+  }
+
+
+
+  @include breakpoint(tablet) {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    &__bur {
+      display: none;
+    }
+
+    &__logo {
+      height: 50px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(39, 33, 33, 0.8);
+    height:200px;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction:row;
+      height: 0;
+      background-color: #fff;
+      z-index: -2;
+      top:5vh;
+
+
+      &__link {
+        font-size: 15px;
+        color: $text-color;
+        text-decoration: none;
+        padding: 0.78vh 2.5vw;
+        margin-left: 60px;
+        transition: background-color ease-in-out 0.8s;
+
+        &:hover {
+          background-color: #ffe600;
+        }
+      }
+      align-items: center;
+    }
+  }
+}
